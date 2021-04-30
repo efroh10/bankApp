@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="./bankStyle.css">
+        <script type="module" src="./bankHelpers.js"> 
+            import {createUser} from './bankHelpers.js';
+        </script>
+    </head>
+    <body>
+        <h1>Froh's Bank and Ultra-secure Money Stash</h1>
+        <!-- <form>
+            <label for="username">Username (required):</label>
+            <input name="username" id="username" type="text" required>
+            <button name="login">Login</button>
+        </form> -->
+        <form action="//localhost:5000/api/accounts" method="POST" name="newUser" id="newUser">
+            <label for="user">Username:</label>
+            <input class="input" type="text" name="user" id="user" required> 
+            <br>
+            <label for="currency">Currency:</label>
+            <select class="select input" name="currency" id="currency" required>
+                <option value=null></option>
+                <option value="$">$</option>
+                <option value="€">€</option>
+                <option value="¥">¥</option>
+                <option value="£">£</option>
+            </select>
+            <br>
+            <label for="description">Description:</label>
+            <input class="input" type="text" name="description" id="description" required>
+            <br>
+            <label for="balance">Balance:</label>
+            <input class="input" type="number" name="balance" id="balance" required>
+            <br>
+            <button name="register">Register</button>
+        </form>
+
+        <form action="//localhost:5000/api/accounts/:user/transactions" method="POST" name="newTransaction" id="newTransaction">
+            <!-- <label for="login">Username:</label>
+            <input class="input" type="text" name="login" id="login" -->
+            <label for="date">Date:</label>
+            <input class="input" type="datetime-local" name="date" id="date" required>
+            <br>
+            <label for="object">Object:</label>
+            <input class="input" type="text" name="object" id="object" required>
+            <br>
+            <label for="amount">Amount</label>
+            <input class="input" type="text" name="amount" id="amount" required>
+            <br>
+            <button name="enterTransaction">Enter Transaction</button>
+        </form>
+
+    </body>
+</html>

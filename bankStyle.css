@@ -1,0 +1,17 @@
+body {
+    background-color: lightblue;
+    color: black;
+}
+
+.input  {
+    margin-left: 50px;
+    margin-bottom: 5px;
+}
+
+.select {
+    width: 150px;
+}
+
+:invalid    {
+    border: 1px solid red;
+}
