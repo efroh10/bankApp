@@ -6,7 +6,7 @@
             import {createUser} from './bankHelpers.js';
         </script>
     </head>
-    <body>
+    <body class="main">
         <h1>Froh's Bank and Ultra-secure Money Stash</h1>
         <!-- <form>
             <label for="username">Username (required):</label>
@@ -19,7 +19,7 @@
             <br>
             <label for="currency">Currency:</label>
             <select class="select input" name="currency" id="currency" required>
-                <option value=null></option>
+                <option></option>
                 <option value="$">$</option>
                 <option value="€">€</option>
                 <option value="¥">¥</option>
@@ -27,7 +27,7 @@
             </select>
             <br>
             <label for="description">Description:</label>
-            <input class="input" type="text" name="description" id="description" required>
+            <textarea class="input" type="text" name="description" id="description" required></textarea>
             <br>
             <label for="balance">Balance:</label>
             <input class="input" type="number" name="balance" id="balance" required>

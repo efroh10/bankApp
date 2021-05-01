@@ -1,6 +1,8 @@
 body {
     background-color: lightblue;
     color: black;
+    margin: auto;
+    width: 50%;
 }
 
 .input  {
@@ -12,6 +14,6 @@ body {
     width: 150px;
 }
 
-:invalid    {
+.input:invalid    {
     border: 1px solid red;
 }
