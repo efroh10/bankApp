@@ -17,3 +17,7 @@ body {
 .input:invalid    {
     border: 1px solid red;
 }
+
+#newTransaction {
+    visibility: hidden;
+}
