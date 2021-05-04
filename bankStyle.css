@@ -14,10 +14,11 @@ body {
     width: 150px;
 }
 
-.input:invalid    {
+.invalid    {
     border: 1px solid red;
+
 }
 
-#newTransaction {
+.hidden {
     visibility: hidden;
 }

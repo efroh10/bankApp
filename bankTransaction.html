@@ -2,15 +2,20 @@
 <html lang="en">
     <head>
         <link rel="stylesheet" href="./bankStyle.css"> <!-- decided to use one css style sheet for both html pages, ensuring max uniformity of look across the ui-->
-        <script type="module" src="./bankHelpers.js">
-            import {} from './bankHelpers.js';
+        <script type="module" src="./bankTransactionHelpers.js">
+            import {} from './bankTransactionHelpers.js';
         </script>
     </head>
     <body>
         <h1>Froh's Bank and Ultra-secure Money Stash</h1>
         <h2>Login</h2>
+        <form name="login" id="login">
+            <label for="loginUser">Username:</label>
+            <input type="text" name="loginUser" id="loginUser" required>
+            <button name="register">Login</button>
+        </form>
 
-        <form action="//localhost:5000/api/accounts/:user/transactions" method="POST" name="newTransaction" id="newTransaction">
+        <form action="//localhost:5000/api/accounts/:user/transactions" method="POST" name="newTransaction" id="newTransaction" class="hidden">
             <!-- <label for="login">Username:</label>
             <input class="input" type="text" name="login" id="login" -->
             <label for="date">Date:</label>
