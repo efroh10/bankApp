@@ -2,31 +2,31 @@
 <html lang="en">
     <head>
         <link rel="stylesheet" href="./bankStyle.css"> <!-- decided to use one css style sheet for both html pages, ensuring max uniformity of look across the ui-->
-        <script type="module" src="./bankTransactionHelpers.js">
-            import {} from './bankTransactionHelpers.js';
-        </script>
+        <script type="module" src="./bankTransactionHelpers.js"></script>
     </head>
     <body>
-        <h1>Froh's Bank and Ultra-secure Money Stash</h1>
+        <h1>Froh's Bank and Ultra-Secure Money Stash</h1>
         <h2>Login</h2>
-        <form name="login" id="login">
+        <!--I think this is the greatest weakness of my project. 
+            If i had used only one html page, I could have introduced login validation to ensure that an actual user would be passed into the post request.
+            As it is, I could not find a way to validate that, and if a non-registered username is used at login,
+            the app will proceed until it throws an error upon transaction entry.-->
+        <form name="login" id="login"> 
             <label for="loginUser">Username:</label>
             <input type="text" name="loginUser" id="loginUser" required>
             <button name="register">Login</button>
         </form>
 
         <form action="//localhost:5000/api/accounts/:user/transactions" method="POST" name="newTransaction" id="newTransaction" class="hidden">
-            <!-- <label for="login">Username:</label>
-            <input class="input" type="text" name="login" id="login" -->
-            <label for="date">Date:</label>
+            <label for="date" class="formLabel">Date:</label>
             <input class="input" type="datetime-local" name="date" id="date" required>
-            <br>
-            <label for="object">Object:</label>
+            <div id="dateNote" class="hidden note">Please Enter a Valid Date</div>
+            <label for="object" class="formLabel">Object:</label>
             <input class="input" type="text" name="object" id="object" required>
-            <br>
-            <label for="amount">Amount</label>
-            <input class="input" type="text" name="amount" id="amount" required>
-            <br>
+            <div id="objectNote" class="hidden note">Please Enter a Transaction Object</div>
+            <label for="amount" class="formLabel">Amount</label>
+            <input class="input" type="number" name="amount" id="amount" step="0.01" required>
+            <div id="amountNote" class="hidden note">Please Enter a Transaction Amount less than 0</div>
             <button name="enterTransaction">Enter Transaction</button>
         </form>
     </body>

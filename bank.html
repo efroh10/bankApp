@@ -1,23 +1,29 @@
+<!--This is the central file.
+    I tested by using VSCode's Live Server extension, 
+    as well as running the api from terminal.
+    Results of procedures do not appear on my HTML pages,
+    but can be viewed in console and found successfully entered on the api.
+    I tested in chrome as browser compatability is important for date function,
+    like Gabe mentioned in the instructions.-->
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
         <link rel="stylesheet" href="./bankStyle.css">
-        <script type="module" src="./bankHelpers.js"> 
-            import {} from './bankHelpers.js';
-        </script>
+        <script type="module" src="./bankHelpers.js"></script>
     </head>
-    <body class="main">
-        <h1>Froh's Bank and Ultra-secure Money Stash</h1>
-        <!-- <form>
-            <label for="username">Username (required):</label>
-            <input name="username" id="username" type="text" required>
-            <button name="login">Login</button>
-        </form> -->
+    <body>
+        <h1>Froh's Bank and Ultra-Secure Money Stash</h1>
+        <h2>Register</h2>
+        <label for="redirect">Already Registered? Click Here To Login:</label>
+        <button name="redirect" id="redirect" onclick='location.href="bankTransaction.html"'>Login</button>
+        <br>
+        <br>
         <form action="//localhost:5000/api/accounts" method="POST" name="newUser" id="newUser">
-            <label for="user">Username:</label>
-            <input class="input" type="text" name="user" id="user" required> 
-            <br>
-            <label for="currency">Currency:</label>
+            <label for="user" class="formLabel">Username:</label>
+            <input class="input" type="text" name="user" id="user" pattern="[a-zA-Z0-9]{8,25}" required> 
+            <div id="userNote" class="hidden note">Username must be 8-25 characters and only have letters and numbers</div>
+            <label for="currency" class="formLabel">Currency:</label>
             <select class="select input" name="currency" id="currency" required>
                 <option></option>
                 <option value="$">$</option>
@@ -25,13 +31,13 @@
                 <option value="¥">¥</option>
                 <option value="£">£</option>
             </select>
-            <br>
-            <label for="description">Description:</label>
+            <div id="currencyNote" class="hidden note">Please Make a Selection</div>
+            <label for="description" class="description formLabel">Description:</label>
             <textarea class="input" type="text" name="description" id="description" required></textarea>
-            <br>
-            <label for="balance">Balance:</label>
-            <input class="input" type="number" name="balance" id="balance" required>
-            <br>
+            <div id="descriptionNote" class="hidden note">Please Write a Description</div>
+            <label for="balance" class="formLabel">Balance:</label>
+            <input class="input" type="number" name="balance" id="balance" step="0.01" required>
+            <div id="balanceNote" class="hidden note">Balance must be a number greater than 50</div>
             <button name="register">Register</button>
         </form>
 
